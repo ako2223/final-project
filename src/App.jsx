@@ -1,12 +1,13 @@
 
 import './App.css';
 import Layout from './Layout/Layout';
+import AppRouter from './pages/AppRouter/AppRouter';
 
 function App() {
   return (
     <div className="App">
    <Layout>
-
+<AppRouter/>
    </Layout>
     </div>
   );
