@@ -12,9 +12,11 @@ function Navgation() {
         <NavLink className={style.link} to={"/about_us"}>
           About
         </NavLink>
-        {/* <NavLink className={style.link} to={'/catalog'}>Catalog</NavLink>
+        <NavLink className={style.link} to={'/catalog'}>Catalog</NavLink>
                         <NavLink className={style.link} to={'/shop'}>Shop</NavLink>
-                        <NavLink className={style.link} to={'/blog'}>Blog</NavLink> */}
+                        <NavLink className={style.link} to={'/blog'}>Blog</NavLink>
+                        <NavLink className={style.link} to={'/login'}>Login</NavLink>
+                        <NavLink className={style.link} to={'/registration'}>Register</NavLink>
       </div>
     </div>
   );

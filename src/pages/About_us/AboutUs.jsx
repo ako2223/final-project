@@ -2,7 +2,9 @@ import React from 'react'
 
 function AboutUs() {
     return (
-        <div>About us placeholder</div>
+        <div>
+            <h1>About</h1>
+        </div>
     )
 }
 

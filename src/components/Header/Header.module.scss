@@ -1,8 +1,10 @@
 .header {
-  
+  width: 100%;
+  max-width: 1600px;
     display: flex;
     flex-direction: row;
-    padding-left: 70px;
+    padding-left: 74px;
+    padding-top: 24px;
 }
 
 .logo__text {

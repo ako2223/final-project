@@ -3,7 +3,10 @@ import style from './Home.module.scss'
 
 function Home() {
     return (
-        <div>Home placeholder</div>
+        <div>
+<button>Login</button><button>Registration</button>
+
+        </div>
     )
 }
 

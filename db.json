@@ -1,0 +1,88 @@
+{
+  "users": [
+    {
+      "email": "alex@gmail.com",
+      "password": "$2a$10$kq4FkgoDCdAtIRlhNkd60eQ4TXC3BltYV3MRgs.r0Ds8GteXflKE.",
+      "userName": "alex",
+      "id": 1
+    },
+    {
+      "email": "alex2@gmail.com",
+      "password": "$2a$10$e3eohEkkdcflKPuPS5nNqu2iBBfcAzbZY.lVPJUJcLl5a5GPs/NVG",
+      "userName": "alex2",
+      "id": 2
+    },
+    {
+      "email": "alex3@gmail.com",
+      "password": "$2a$10$cEIu6s.yVKysUkhrtF23A.1xusPOkYvQnmHGsfx/4op4JrScr1WKe",
+      "userName": "alex3",
+      "id": 3
+    },
+    {
+      "email": "alex4@gmail.com",
+      "password": "$2a$10$NzCRFUc7MyNFcu/QD1trnOdmDT.mdJIS9GJgucvjSPu3weNIPqcQ.",
+      "userName": "alex4",
+      "id": 4
+    },
+    {
+      "email": "alex5@gmail.com",
+      "password": "$2a$10$RlhRFylio.Z2QFfUC9goueKFbR7rhVN4yqeZwR7dQAC1PagTIw5l.",
+      "userName": "alex5",
+      "id": 5
+    },
+    {
+      "email": "alex6@gmail.com",
+      "password": "$2a$10$Qs5.Fi0M6f6i0UpHfjdRz.qrCJX8JdXlCR1hSShkiKYM.Ae9/gQHq",
+      "userName": "alex6",
+      "id": 6
+    },
+    {
+      "email": "alex7@gmail.com",
+      "password": "$2a$10$BCDwCKipdUzp..12RYQNiugjZelV2zpPriUIdjvLwT8fh2ZCy3bZi",
+      "userName": "alex7",
+      "id": 7
+    },
+    {
+      "email": "alexander@gmail.com",
+      "password": "$2a$10$2OZRxTp7GysleYBeM.d6y.FIGkpwiykm3B68VCWUgpxHDqEPvE5w6",
+      "userName": "alexander",
+      "id": 8
+    },
+    {
+      "email": "alexander222@gmail.com",
+      "password": "$2a$10$CXN5bRpBRrs7QzkbYsAcK.qfYUNPSFCf0JNE08buSRnAais3/6hx.",
+      "userName": "abc",
+      "id": 9
+    },
+    {
+      "email": "alexander222222@gmail.com",
+      "password": "$2a$10$1dFTWDqSdDtlhxIKXVNPperuplG5Q2mEjZnYUEZU7uKzgvsbKWU3G",
+      "userName": "avc",
+      "id": 10
+    },
+    {
+      "email": "alexander22f2222@gmail.com",
+      "password": "$2a$10$wOaX9C.tUTBzuEwSYcQxcuzRia0xMkfGZRv0V8vpt6mYZRxEn7CsS",
+      "userName": "fdsfdsg",
+      "id": 11
+    },
+    {
+      "email": "alexander222222fsdf@gmail.com",
+      "password": "$2a$10$NxCr4Gc2tb0sYsJ1s1xzyOohfXVY7lmzOkllLNp5bcKoa0hLXIlFK",
+      "userName": "fdsfsdf",
+      "id": 12
+    },
+    {
+      "email": "new@gmail.com",
+      "password": "$2a$10$Zoj9ygGTuD8TqCsesg2kWeLGArtqviKXk9l/wIzMW7qsb43DS.dvK",
+      "userName": "new",
+      "id": 13
+    },
+    {
+      "email": "new2@gmail.com",
+      "password": "$2a$10$VulpqfsOl4YfrJvLXDCJHOMdRVgcBeTdwCyhgaKcIMAFQtSmKydMO",
+      "userName": "new2",
+      "id": 14
+    }
+  ]
+}
