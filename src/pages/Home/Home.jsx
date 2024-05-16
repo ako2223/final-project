@@ -1,10 +1,11 @@
 import React from 'react'
 import style from './Home.module.scss'
+import Hero from '../../components/Hero/Hero'
 
 function Home() {
     return (
         <div>
-<button>Login</button><button>Registration</button>
+<Hero/>
 
         </div>
     )

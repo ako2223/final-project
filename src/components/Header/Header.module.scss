@@ -5,6 +5,10 @@
     flex-direction: row;
     padding-left: 74px;
     padding-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo__text {

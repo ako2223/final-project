@@ -3,7 +3,7 @@ import style from './Footer.module.scss'
 
 function Footer() {
     return (
-        <div>Footer placeholder</div>
+        <div className={style.footer}>Footer placeholder</div>
     )
 }
 
