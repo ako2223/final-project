@@ -7,8 +7,26 @@ import Registration from "../../components/Regisgration/Registration";
 import RegistPage from "../RegistPage/RegistPage";
 import UserPage from "../../components/UserPage/UserPage";
 import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
+import Contact from "../../components/Contact/Contact";
+import News from "../../components/News/News";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import DetailNew from "../../components/DetailNew/DetailNew";
+import { useState, useEffect } from "react";
 
 function AppRouter() {
+  const [token, setToken] = useState(null);
+  const authUser = [
+    {path: '/',
+    element: <Home/>},
+    {path: '/regisration',
+    element: <RegistPage/>},
+    {path: '/contacts',
+    element: <Contact/>},
+
+   useEffect(()=>{
+    setToken(localStorage.getItem('accessToken'))
+   },[localStorage.getItem('accessToken')])
+  ]
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -16,6 +34,11 @@ function AppRouter() {
       <Route path="/login" element={<Login />} />
       <Route path="/registration" element={<RegistPage />} />
       <Route path="/user" element={<UserPage />} />
+      <Route path="/contacts" element={<Contact />} />
+      <Route path="/news" element={<News />} />
+      <Route path="/404" element={<ErrorPage />} />
+      <Route path="*" element={<ErrorPage />} />
+      <Route path="/news/:newsId/:title" element={<DetailNew />} />
     </Routes>
   );
 }
