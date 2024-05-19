@@ -7,7 +7,7 @@ function Navgation() {
     <div>
       <div className={style.navigate_links}>
         <NavLink className={style.link} to={"/"}>
-          Home
+          Главная
         </NavLink>
         <NavLink className={style.link} to={"/about_us"}>
           About

@@ -1,14 +1,12 @@
-.header {
-  width: 100%;
-  max-width: 1600px;
+.sidebar {
+ 
     display: flex;
     flex-direction: column;
     padding-left: 74px;
     padding-top: 24px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    width: 300px;
+    align-items: flex-start;
+   
 }
 
 .logo__text {
@@ -18,4 +16,9 @@
     font-weight: 700;
     line-height: 75px;
    
+}
+
+.logo__img{
+  width: 100px;
+  height: 100px;
 }

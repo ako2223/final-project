@@ -1,11 +1,11 @@
 .navigate_links {
     
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     font-family: "Exo", sans-serif;
-    width: 774px;
+    
     color: rgb(77, 42, 42);
 font-size: 24px;
 font-weight: 600;
