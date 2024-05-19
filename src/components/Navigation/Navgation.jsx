@@ -10,15 +10,15 @@ function Navgation() {
           Главная
         </NavLink>
         <NavLink className={style.link} to={"/about_us"}>
-          About
+          Поиск
         </NavLink>
-        <NavLink className={style.link} to={'/catalog'}>Catalog</NavLink>
-                        <NavLink className={style.link} to={'/shop'}>Shop</NavLink>
-                        <NavLink className={style.link} to={'/blog'}>Blog</NavLink>
-                        <NavLink className={style.link} to={'/news'}>News</NavLink>
-                        <NavLink className={style.link} to={'/contacts'}>Contacts</NavLink>
-                        <NavLink className={style.link} to={'/login'}>Login</NavLink>
-                        <NavLink className={style.link} to={'/registration'}>Register</NavLink>
+        <NavLink className={style.link} to={'/catalog'}>Интересное</NavLink>
+                        <NavLink className={style.link} to={'/shop'}> <img className={style.icon__img} src={require('../../assets/img/anbunet.png')} alt="anbunet logo" />Сообщения</NavLink>
+                        <NavLink className={style.link} to={'/blog'}>Уведомления</NavLink>
+                        <NavLink className={style.link} to={'/news'}>Новый пост</NavLink>
+                        <NavLink className={style.link} to={'/contacts'}>Профиль</NavLink>
+                        <NavLink className={style.link} to={'/login'}>Вход</NavLink>
+                        <NavLink className={style.link} to={'/registration'}>Регистрация</NavLink>
       </div>
     </div>
   );
