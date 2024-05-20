@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import style from './Posts.module.scss'
 import { Link } from 'react-router-dom'
 import ago from '../Ago/Ago'
+import { CiHeart } from "react-icons/ci";
+
 function Posts() {
 
     const [styles, setStyles] = useState('descr')
@@ -32,9 +34,11 @@ function Posts() {
 
             <strong>{el.username}</strong> <strong>{ago(el.time)}</strong>
                 <img src={`${el.img}`} alt="aaa" /> 
+                <div className={style.post__buttons}><div><CiHeart/></div></div>
 <div className={style.descr__div} onClick={changeStyle}><p className={style[styles]}>{el.descr}</p>{el.descr.length>60?<span className={style.more}>Еще...</span>:''}</div>
 
                 </div>
+               
         ))}
        </div>
     )

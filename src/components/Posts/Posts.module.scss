@@ -54,3 +54,8 @@ img {
 strong {
     text-align: left;
 }
+
+.post__buttons {
+    display: flex;
+    flex-direction: row;
+}
