@@ -12,6 +12,7 @@ import News from "../../components/News/News";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import DetailNew from "../../components/DetailNew/DetailNew";
 import { useState, useEffect } from "react";
+import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
 
 function AppRouter() {
   const [token, setToken] = useState(null);
@@ -32,7 +33,7 @@ function AppRouter() {
       <Route path="/" element={<Home />} />
       <Route path="/about_us" element={<PrivateRoute><About/></PrivateRoute>} />
       <Route path="/login" element={<Login />} />
-      <Route path="/registration" element={<RegistPage />} />
+      <Route path="/registration" element={<RegistrationForm />} />
       <Route path="/user" element={<UserPage />} />
       <Route path="/contacts" element={<Contact />} />
       <Route path="/news" element={<News />} />
