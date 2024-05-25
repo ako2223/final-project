@@ -5,14 +5,10 @@ import { postApi, addUser, addPost } from "../../store/services/postApi";
 
 function RegistrationForm() {
   const [addUser, {}] = postApi.useAddUserMutation();
-  const [addPost, {}] = postApi.useAddPostMutation();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const [addPost, { isLoading, isSuccess, isError, error }] = postApi.useAddPostMutation();
+  const { register, handleSubmit, reset } = useForm();
 
-  console.log(errors);
+
 
   const onSubmit = (values) => {
     addUser(values);
@@ -21,8 +17,9 @@ function RegistrationForm() {
   const onPost = (values) => {
     const formData = new FormData();
     formData.append("file", values.file[0], values.file[0].name);
+    formData.append("description", values.description);
     addPost(formData);
-  };
+};
   return (
     //         <form onSubmit={handleSubmit(onSubmit)} className={style.form} noValidate>
     //             <div className={style.input}><input className={errors.name && style.error} type="text" placeholder="Name" {...register("name", {pattern:  {value: /^[a-zA-Z0-9]{2,15}$/
@@ -38,13 +35,30 @@ function RegistrationForm() {
     // <button type="submit" >Submit</button>
     //         </form>
 
-    <form onSubmit={handleSubmit(onPost)}>
-      {/* Choose a file to upload: <input name="uploadedfile" type="file" {...register("file")}/><br /> */}
-      Choose a file to upload:{" "}
-      <input name="uploadedfile" type="file" {...register("file")} />
-      <br />
-      <input type="submit" value="Upload File" />
-    </form>
+    // <form onSubmit={handleSubmit(onPost)}>
+    //   {/* Choose a file to upload: <input name="uploadedfile" type="file" {...register("file")}/><br /> */}
+    //   Choose a file to upload:{" "}
+    //   <input name="uploadedfile" type="file" {...register("file")} />
+    //   <br />
+    //   <input type="submit" value="Upload File" />
+    // </form>
+<form onSubmit={handleSubmit(onPost)}>
+            <label>
+                Choose a file to upload:{" "}
+                <input name="file" type="file" {...register("file")} />
+            </label>
+            <br />
+            <label>
+                Description:{" "}
+                <input name="description" type="text" {...register("description")} />
+            </label>
+            <br />
+            <input type="submit" value="Upload File and Description" disabled={isLoading} />
+            {isLoading && <p>Uploading...</p>}
+            {isSuccess && <p>File and description uploaded successfully!</p>}
+            {isError && <p>Error uploading file and description: {error.message}</p>}
+        </form>
+
   );
 }
 
