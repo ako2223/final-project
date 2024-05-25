@@ -1,0 +1,61 @@
+.posts {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-left: 100px;
+    
+}
+
+.new {
+    border: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    overflow: visible;
+}
+
+
+img {
+    width: 500px;
+  
+}
+.descr__div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.descr {
+    border: none;
+    height: 1.5em;
+    padding: 2px; /* adjust to taste */
+    overflow: hidden  
+}
+
+.more {
+    height: 1.5em;
+    width: 10%;
+    padding: 2px;
+}
+
+.descr2 {
+    border: none;
+    height: 1.5em;
+    padding: 2px; /* adjust to taste */
+
+}
+
+strong {
+    text-align: left;
+}
+
+.post__buttons {
+    display: flex;
+    flex-direction: row;
+}

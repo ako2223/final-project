@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useRef } from "react";
 import style from "./NewPost.module.css";
 import { useForm } from "react-hook-form";
 import { postApi, addUser, addPost } from "../../store/services/postApi";
@@ -7,6 +8,13 @@ function NewPost() {
   const [addUser, {}] = postApi.useAddUserMutation();
   const [addPost, { isLoading, isSuccess, isError, error }] = postApi.useAddPostMutation();
   const { register, handleSubmit, reset } = useForm();
+  const [image, setImage] = useState(null)
+
+  const onImageChange = (event) => {
+   if (event.target.files && event.target.files[0]) {
+     setImage(URL.createObjectURL(event.target.files[0]));
+   }
+  }
 
 
 
@@ -20,7 +28,12 @@ function NewPost() {
     formData.append("description", values.description);
     addPost(formData);
 };
+
+const readyFile = () => {
+  alert('файл выбран')
+}
   return (
+    
     //         <form onSubmit={handleSubmit(onSubmit)} className={style.form} noValidate>
     //             <div className={style.input}><input className={errors.name && style.error} type="text" placeholder="Name" {...register("name", {pattern:  {value: /^[a-zA-Z0-9]{2,15}$/
     // , message: "Username must be 2-15 characters long, contain only letters and numbers"}, required: 'Required field'})} />
@@ -42,14 +55,16 @@ function NewPost() {
     //   <br />
     //   <input type="submit" value="Upload File" />
     // </form>
+    <div>
+   
 <form onSubmit={handleSubmit(onPost)}>
             <label>
-                Choose a file to upload:{" "}
-                <input name="file" type="file" {...register("file")} />
+                Выберите картинку:{" "}
+                <input name="file" type="file" onChange={onImageChange}  className="filetype"/>
             </label>
             <br />
             <label>
-                Description:{" "}
+               Текст (опционально):{" "}
                 <input name="description" type="text" {...register("description")} />
             </label>
             <br />
@@ -57,7 +72,10 @@ function NewPost() {
             {isLoading && <p>Uploading...</p>}
             {isSuccess && <p>File and description uploaded successfully!</p>}
             {isError && <p>Error uploading file and description: {error.message}</p>}
+           
         </form>
+        <img alt="preview image" src={image}/>
+      </div>
 
   );
 }
