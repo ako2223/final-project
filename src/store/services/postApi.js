@@ -21,7 +21,7 @@ export const postApi = createApi({
     }),
     addUser: build.mutation({
       query: (data) => ({
-        url: `/users`,
+        url: `api/users/register`,
         method: "POST",
         body: data,
       }),
@@ -58,11 +58,13 @@ export const postApi = createApi({
     addPost: build.mutation({
       query: (formData) => {
           console.log(formData.has("file"));
+          const token = localStorage.getItem("accessToken")
           return {
               url: `/posts`,
               method: "POST",
               headers: {
-                  Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJleHAiOjE3MTY2NDQ4ODgsImlzcyI6IkFuYnVuZXQuQVBJIiwiYXVkIjoiQW5idW5ldC5DbGllbnQifQ.Uy1sdmcBdfSayS-ATKtjCaoMXLWulrELYw5YOU7KXKs`,
+                  Authorization: `Bearer ${token}`
+              ,
               },
               body: formData,
           };

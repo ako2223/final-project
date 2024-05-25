@@ -4,15 +4,15 @@ import axios from "axios";
 
 function Login() {
   const [form, setForm] = useState({
-    email: "",
+    login: "",
     password: "",
   });
   console.log(form);
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:8000/login", form);
-      localStorage.setItem("accessToken", data.accessToken);
+      const { data } = await axios.post("https://localhost:7199/api/users/login", form);
+      localStorage.setItem("accessToken", data);
     } catch (error) {
       console.error(error);
     }
@@ -22,12 +22,12 @@ function Login() {
       <div>
         <form onSubmit={handleSubmit}>
           <input
-            type="email"
-            value={form.email}
+            type="text"
+            value={form.login}
             onChange={(event) =>
-              setForm({ ...form, email: event.target.value })
+              setForm({ ...form, login: event.target.value })
             }
-            placeholder="email"
+            placeholder="login"
           />
           <input
             type="password"

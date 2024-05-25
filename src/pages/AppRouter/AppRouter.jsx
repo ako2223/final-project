@@ -13,7 +13,8 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import DetailNew from "../../components/DetailNew/DetailNew";
 import { useState, useEffect } from "react";
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
-
+import NewpPostPage from "../NewPostPage/NewPostPage";
+import LoginPage  from '../LoginPage/LoginPage'
 function AppRouter() {
   const [token, setToken] = useState(null);
   const authUser = [
@@ -40,6 +41,7 @@ function AppRouter() {
       <Route path="/404" element={<ErrorPage />} />
       <Route path="*" element={<ErrorPage />} />
       <Route path="/news/:newsId/:title" element={<DetailNew />} />
+      <Route path="/newpost" element={<NewpPostPage />} />
     </Routes>
   );
 }

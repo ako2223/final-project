@@ -19,7 +19,7 @@ function Navgation() {
         <NavLink className={style.link} to={'/catalog'}><div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcBinoculars size={20} /> Интересное</div></NavLink>
                         <NavLink className={style.link} to={'/shop'}> <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcAbout size={20} /> Сообщения</div></NavLink>
                         <NavLink className={style.link} to={'/blog'}><div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcLike size={20} /> Уведомления</div></NavLink>
-                        <NavLink className={style.link} to={'/news'}><div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcMultipleCameras size={20} /> Новый пост</div></NavLink>
+                        <NavLink className={style.link} to={'/newpost'}><div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcMultipleCameras size={20} /> Новый пост</div></NavLink>
                         <NavLink className={style.link} to={'/contacts'}><div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcButtingIn size={20} /> Профиль</div></NavLink>
                         <NavLink className={style.link} to={'/login'}><div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><AiOutlineLogin size={20} /> Вход</div></NavLink>
                         <NavLink className={style.link} to={'/registration'}><div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcRegisteredTrademark size={20} /> Регистрация</div></NavLink>
