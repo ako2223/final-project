@@ -1,33 +1,79 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const postApi = createApi({
-  reducerPath: 'postApi',
-  baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:8000'}),
+  reducerPath: "postApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://localhost:7199" }),
   tagTypes: ["Post"],
   endpoints: (build) => ({
     getPosts: build.query({
       query: () => ({
-        url: '/posts',
-      }),providesTags: (result) => ["Post"],
-
+        url: "/posts",
+      }),
+      providesTags: (result) => ["Post"],
     }),
     updatePost: build.mutation({
-      query: ({id, data}) => ({
+      query: ({ id, data }) => ({
         url: `posts/${id}/`,
-        method: 'PUT',
-        body: data, 
-      }), invalidatesTags: ["Post"]
+        method: "PUT",
+        body: data,
+      }),
+      invalidatesTags: ["Post"],
     }),
     addUser: build.mutation({
       query: (data) => ({
         url: `/users`,
-        method: 'POST',
-        body: data, 
-      }), invalidatesTags: ["Post"]
-    })
-  })
-})
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["Post"],
+    }),
+    // addPost: build.mutation({
+    //   query: ({ file }) => {
+    //     // Ensure file is a FormData object
+    //     if (!(file instanceof FormData)) {
+    //       throw new Error("The file must be a FormData object.");
+    //     }
+    
+    //     // Check if FormData contains 'file'
+    //     console.log(file.has("file"));
+    
+    //     return {
+    //       url: `/posts`,
+    //       method: "POST",
+    //       headers: {
+    //         Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJleHAiOjE3MTY2NDM2ODMsImlzcyI6IkFuYnVuZXQuQVBJIiwiYXVkIjoiQW5idW5ldC5DbGllbnQifQ.tG66sYVW_oa1vvqKiMaBqSt0KOEr0eXW0JenpkdI0PQ`,
+    //       },
+    //       body: file,
+    //     };
+    //   },
+    //   invalidatesTags: ["Post"],
+    // }),
 
+
+
+
+
+
+
+    addPost: build.mutation({
+      query: ({file}) => {
+        console.log(file.has("file"));
+        return {
+          url: `/posts`,
+          method: "POST",
+          headers: {
+            "Content-Type": "multipart/form-data;",
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJleHAiOjE3MTY1OTgyMzksImlzcyI6IkFuYnVuZXQuQVBJIiwiYXVkIjoiQW5idW5ldC5DbGllbnQifQ.Epyj40v4t0fd9-4Ecpg2kFGPCsoDSknYaYSx7Yp_c8k`,
+          },
+          body: file,
+
+          // formData: true,
+        };
+      },
+      invalidatesTags: ["Post"],
+    }),
+  }),
+});
 
 // import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
@@ -46,14 +92,14 @@ export const postApi = createApi({
 //       query: ({id, data}) => ({
 //         url: `posts/${id}/`,
 //         method: 'PUT',
-//         body: data, 
+//         body: data,
 //       }), invalidatesTags: ["Post"]
 //     }),
 //     addUser: build.mutation({
 //       query: (data) => ({
 //         url: `/users`,
 //         method: 'POST',
-//         body: data, 
+//         body: data,
 //       }), invalidatesTags: ["Post"]
 //     })
 //   })
