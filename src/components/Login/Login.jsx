@@ -12,7 +12,7 @@ function Login() {
     event.preventDefault();
     try {
       const { data } = await axios.post("https://localhost:7199/api/users/login", form);
-      localStorage.setItem("accessToken", data);
+      localStorage.setItem("accessToken", data.token);
     } catch (error) {
       console.error(error);
     }
