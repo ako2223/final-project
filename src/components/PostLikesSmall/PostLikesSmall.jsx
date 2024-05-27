@@ -28,7 +28,7 @@ function PostLikesSmall({id}) {
     const [postlikes, setPostLikes] = useState([])
 
     const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
+    const handleOpen = () => {post.likes.length && setOpen(true)};
     const handleClose = () => setOpen(false);
 
 
@@ -51,7 +51,10 @@ function PostLikesSmall({id}) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style2}>
+        <Typography id="modal-modal-title" variant="h6" component="h2">
+            Кому понравился пост:
+          </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           {post && post.likes.map((el)=>(
 
