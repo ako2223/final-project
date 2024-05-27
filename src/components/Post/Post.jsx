@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import style from './Post.module.scss'
-import { Link } from 'react-router-dom'
 import ago from '../Ago/Ago'
 import { CiHeart } from "react-icons/ci";
 

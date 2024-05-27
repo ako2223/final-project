@@ -8,10 +8,10 @@ import { FcHome, FcSearch, FcBinoculars, FcAbout, FcGlobe, FcMultipleCameras, Fc
 
 function Navgation() {
   return (
-    <div>
+    
       <div className={style.navigate_links}>
         <NavLink className={style.link} to={"/"}>
-        <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcHome size={20} />Главная</div>
+        <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcHome size={20} /><span className={style.hidden2}>Главная</span></div>
         </NavLink>
         <NavLink className={style.link} to={"/about_us"}>
         <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcSearch size={20} /> Поиск</div>
@@ -24,7 +24,7 @@ function Navgation() {
                         <NavLink className={style.link} to={'/login'}><div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><AiOutlineLogin size={20} /> Вход</div></NavLink>
                         <NavLink className={style.link} to={'/registration'}><div style={{display: "flex", justifyContent: "center", alignItems: "center"}}><FcRegisteredTrademark size={20} /> Регистрация</div></NavLink>
       </div>
-    </div>
+    
   );
 }
 

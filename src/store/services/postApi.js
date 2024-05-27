@@ -1,13 +1,20 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+const token = localStorage.getItem("accessToken")
 export const postApi = createApi({
+  
   reducerPath: "postApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://localhost:7199" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://localhost:7199", token: localStorage.getItem("accessToken") }),
   tagTypes: ["Post"],
   endpoints: (build) => ({
     getPosts: build.query({
       query: () => ({
-        url: "/posts",
+        
+        url: "/posts?page=1&quantity=5",
+        headers: {
+          Authorization: `Bearer ${token}`
+      ,
+      }
       }),
       providesTags: (result) => ["Post"],
     }),
@@ -58,7 +65,7 @@ export const postApi = createApi({
     addPost: build.mutation({
       query: (formData) => {
           console.log(formData.has("file"));
-          const token = localStorage.getItem("accessToken")
+          // const token = localStorage.getItem("accessToken")
           return {
               url: `/posts`,
               method: "POST",
@@ -70,6 +77,16 @@ export const postApi = createApi({
           };
       },
       invalidatesTags: ["Post"],
+  }),
+  getPosts2: build.mutation({
+    query: (data) => ({
+      url: `/posts`,
+      method: "GET",
+      body: {
+
+      },
+    }),
+    invalidatesTags: ["Post"],
   }),
   }),
 });
