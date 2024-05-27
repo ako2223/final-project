@@ -50,7 +50,7 @@ function Posts() {
                 <img src={`${el.mediaUrl}`} alt="aaa" /> 
                 <div className={style.post__buttons}><div><CiHeart/></div></div>
 <div className={style.descr__div} onClick={changeStyle}><p className={style[styles]}>{el.description}</p>{el.description?.length > 60 ? <span className={style.more}>Еще...</span> : ''}</div>
-<PostLikesSmall id={el.id}/>
+<div className={style.post_footer2}><PostLikesSmall id={el.id}/></div>
                 </div>
           
         ))}

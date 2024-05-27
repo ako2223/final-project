@@ -18,6 +18,7 @@ const style2 = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+    borderradius: 25,
   };
 
 
@@ -55,14 +56,14 @@ function PostLikesSmall({id}) {
         <Typography id="modal-modal-title" variant="h6" component="h2">
             Кому понравился пост:
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          
           {post && post.likes.map((el)=>(
 
-<p key={el.id}>{el.user.login}</p>
+<Typography id="modal-modal-description" sx={{ mt: 2 }} key={el.id}>{el.user.login}</Typography>
 
 ))} 
 
-          </Typography>
+          
         </Box>
       </Modal>
         
