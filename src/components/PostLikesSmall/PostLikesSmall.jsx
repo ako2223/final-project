@@ -3,13 +3,33 @@ import style from './PostsLikesSmall.module.scss'
 
 import { postApi } from '../../store/services/postApi'
 import { useState } from 'react'
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
+const style2 = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
 
 
-function PostLikesSmall() {
+function PostLikesSmall({id}) {
 
 
-    const {data: post, isLoading, isError, refetch} = postApi.useGetPostQuery('1')
+    const {data: post, isLoading, isError, refetch} = postApi.useGetPostQuery(id)
     const [postlikes, setPostLikes] = useState([])
+
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
 
     // const likes = post.likes
@@ -22,13 +42,30 @@ function PostLikesSmall() {
     return (
        
         <>
-        {post && post.likes.length}
-        {post && post.likes.map((el)=>(
+
+        
+        <span onClick={handleOpen}>{post && post.likes.length} liked</span>
+        <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          {post && post.likes.map((el)=>(
 
 <p key={el.id}>{el.user.login}</p>
 
 ))} 
 
+          </Typography>
+        </Box>
+      </Modal>
+        
+        
+        
+      
         
         
         </>

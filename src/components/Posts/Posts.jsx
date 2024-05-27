@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import ago from '../Ago/Ago'
 import { CiHeart } from "react-icons/ci";
 import { postApi } from '../../store/services/postApi';
+import PostLikesSmall from '../PostLikesSmall/PostLikesSmall';
 
 function Posts() {
 
@@ -49,9 +50,9 @@ function Posts() {
                 <img src={`${el.mediaUrl}`} alt="aaa" /> 
                 <div className={style.post__buttons}><div><CiHeart/></div></div>
 <div className={style.descr__div} onClick={changeStyle}><p className={style[styles]}>{el.description}</p>{el.description?.length > 60 ? <span className={style.more}>Еще...</span> : ''}</div>
-
+<PostLikesSmall id={el.id}/>
                 </div>
-               
+          
         ))}
        </div>
     )
