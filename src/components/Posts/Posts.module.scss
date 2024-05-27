@@ -40,6 +40,9 @@ img {
     width: 100%;
 }
 
+.date {
+    opacity: 50%;
+}
 .descr {
     border: none;
     padding: 2px;
@@ -84,6 +87,11 @@ strong {
     display: flex;
     flex-direction: row;
     gap: 10px;
+}
+
+.post_header {
+    display: inline;
+    text-align: left;
 }
 
 button {

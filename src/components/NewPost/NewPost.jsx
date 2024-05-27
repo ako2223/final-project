@@ -63,9 +63,9 @@ useEffect(onImageChange,[])
             </label>
             <br />
             <input type="submit" value="Создать пост" disabled={isLoading} />
-            {isLoading && <p>Uploading...</p>}
-            {isSuccess && <p>File and description uploaded successfully!</p>}
-            {isError && <p>Error uploading file and description: {error.message}</p>}
+            {isLoading && <p>Загрузка...</p>}
+            {isSuccess && <p>Пост создан!</p>}
+            {isError && <p>Ошибка загрузки... {error.message}</p>}
            
         </form>
         

@@ -88,6 +88,17 @@ export const postApi = createApi({
     }),
     invalidatesTags: ["Post"],
   }),
+  getPost: build.query({
+    query: (id) => ({
+      
+      url: `/posts/${id}`,
+      headers: {
+        Authorization: `Bearer ${token}`
+    ,
+    }
+    }),
+    providesTags: (result) => ["Post"],
+  }),
   }),
 });
 

@@ -45,7 +45,7 @@ function Posts() {
             
             <div className={style.new} key={el.id}>
 
-            <strong>{el.user.login}</strong> <strong>{ago(convertToTimestamp(el.createdDate))}</strong>
+           <div className={style.post_header}> <strong>{el.user.login}</strong> <span className={style.date}>&#x2022; <i>{ago(convertToTimestamp(el.createdDate))}</i>&#x2022;</span></div>
                 <img src={`${el.mediaUrl}`} alt="aaa" /> 
                 <div className={style.post__buttons}><div><CiHeart/></div></div>
 <div className={style.descr__div} onClick={changeStyle}><p className={style[styles]}>{el.description}</p>{el.description?.length > 60 ? <span className={style.more}>Еще...</span> : ''}</div>

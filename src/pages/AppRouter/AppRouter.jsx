@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
 import NewpPostPage from "../NewPostPage/NewPostPage";
 import LoginPage  from '../LoginPage/LoginPage'
+import PostLikesSmall from "../../components/PostLikesSmall/PostLikesSmall";
 function AppRouter() {
   const [token, setToken] = useState(null);
   const authUser = [
@@ -37,7 +38,7 @@ function AppRouter() {
       <Route path="/registration" element={<RegistrationForm />} />
       <Route path="/user" element={<UserPage />} />
       <Route path="/contacts" element={<Contact />} />
-      <Route path="/news" element={<News />} />
+      <Route path="/news" element={<PostLikesSmall />} />
       <Route path="/404" element={<ErrorPage />} />
       <Route path="*" element={<ErrorPage />} />
       <Route path="/news/:newsId/:title" element={<DetailNew />} />
