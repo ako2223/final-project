@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-import style from "./NewPost.module.css";
+import style from "./NewPost.module.scss";
 import { useForm, Controller } from "react-hook-form";
 import { postApi, addUser, addPost } from "../../store/services/postApi";
 import imgplace from '../../assets/img/128px-placeholder.png'
