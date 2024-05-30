@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const token = localStorage.getItem("accessToken")
+console.log(token)
 export const postApi = createApi({
   
   reducerPath: "postApi",
