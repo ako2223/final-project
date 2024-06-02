@@ -103,17 +103,21 @@ export const postApi = createApi({
   getAi: build.query({
     query: () => ({
       url: `https://api.limewire.com/api/image/generation`,
-      method: "GET",
+      method: "POST",
       headers: {
-        Authorization: `Bearer lmwr_sk_lhSUZ5NUf1_BGFFd3Z0Lj61IiBsUWeeXOixg1duVWeEO7aka`,
+        "Content-Type": "application/json",
+        "X-Api-Version": "v1",
+        "Accept": "application/json",
+        "Authorization": `Bearer lmwr_sk_lhSUZ5NUf1_BGFFd3Z0Lj61IiBsUWeeXOixg1duVWeEO7aka`,
       },
-      payload: {
+      body: JSON.stringify({
         prompt: "A cute baby sea otter",
         aspect_ratio: "1:1",
-      },
+      }),
     }),
     providesTags: (result) => ["Post"],
   }),
+  
 }),
 });
 

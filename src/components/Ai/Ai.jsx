@@ -19,7 +19,7 @@ function Ai() {
     <div>
 
     
-      {posts}
+      aaa
     </div>
   );
 }
