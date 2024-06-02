@@ -100,7 +100,21 @@ export const postApi = createApi({
     }),
     providesTags: (result) => ["Post"],
   }),
+  getAi: build.query({
+    query: () => ({
+      url: `https://api.limewire.com/api/image/generation`,
+      method: "GET",
+      headers: {
+        Authorization: `Bearer lmwr_sk_lhSUZ5NUf1_BGFFd3Z0Lj61IiBsUWeeXOixg1duVWeEO7aka`,
+      },
+      payload: {
+        prompt: "A cute baby sea otter",
+        aspect_ratio: "1:1",
+      },
+    }),
+    providesTags: (result) => ["Post"],
   }),
+}),
 });
 
 // import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'

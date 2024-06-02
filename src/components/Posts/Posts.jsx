@@ -57,7 +57,7 @@ function Posts() {
           <img src={`${el.mediaUrl}`.replace("https://localhost:7199/", "")} alt="aaa" />
           <div className={style.post__buttons}>
             <div className={style.heart}>
-              <CiHeart  />
+              <CiHeart  size={25} />
             </div>
           </div>
           <div className={style.descr__div} onClick={changeStyle}>

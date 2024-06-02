@@ -15,10 +15,10 @@ const style2 = {
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
-    border: '2px solid #000',
+    border: '1px solid #000',
     boxShadow: 24,
     p: 4,
-    borderradius: 25,
+    borderRadius: '16px'
   };
 
 
@@ -45,7 +45,7 @@ function PostLikesSmall({id}) {
         <>
 
         
-        <span className={style.all} onClick={handleOpen}>{post && post.likes.length} liked</span>
+        <span className={style.all} onClick={handleOpen}>Понравилось {post && post.likes.length}</span>
         <Modal
         open={open}
         onClose={handleClose}
