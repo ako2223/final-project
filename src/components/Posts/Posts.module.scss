@@ -9,7 +9,7 @@
     margin-top: 40px;
     margin-left: 100px;
  
-    color: white;
+  
     border-radius: 18px;
 }
 
@@ -22,7 +22,7 @@
     height: auto;
     overflow: visible;
     background-color: white;
-    color: white;
+    
     // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 18px;
 }
@@ -46,7 +46,7 @@ img {
 
 .date {
     opacity: 50%;
-    color: white;
+    
 }
 
 .descr {
@@ -86,25 +86,30 @@ img {
     background-color: white;
 }
 
+.heart {
+    background: white;
+    background-blend-mode: overlay;
+}
+
 strong {
     text-align: left;
     font-weight: bold;
-    color: white;
+   
 }
 
 .post__buttons {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    background-color: white;
-    color: white;
+    background-color: white !important;
+    
 }
 
 .post_header {
     display: inline;
     text-align: left;
     background-color: white;
-    color: white;
+ 
 }
 
 button {
@@ -124,7 +129,7 @@ button:hover {
 .post_footer2 {
     text-align: left;
     background-color: white;
-    color: white;
+    
 }
 
 

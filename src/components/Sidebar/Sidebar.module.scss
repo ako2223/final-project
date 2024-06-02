@@ -1,15 +1,16 @@
 .rebar {
   position: fixed;
   left: 0;
-  background-color: white;
+
+  width: 100px;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding-left: 74px;
-  padding-top: 24px;
-  width: 200px;
+  padding-left: 15px;
+  padding-top: 14px;
+  width: 25%;
   align-items: flex-start;
  
 }

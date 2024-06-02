@@ -45,7 +45,7 @@ function PostLikesSmall({id}) {
         <>
 
         
-        <span onClick={handleOpen}>{post && post.likes.length} liked</span>
+        <span className={style.all} onClick={handleOpen}>{post && post.likes.length} liked</span>
         <Modal
         open={open}
         onClose={handleClose}

@@ -54,10 +54,10 @@ function Posts() {
               &#x2022; <i>{ago(convertToTimestamp(el.createdDate))}</i>&#x2022;
             </span>
           </div>
-          <img src={`${el.mediaUrl}`} alt="aaa" />
+          <img src={`${el.mediaUrl}`.replace("https://localhost:7199/", "")} alt="aaa" />
           <div className={style.post__buttons}>
-            <div>
-              <CiHeart />
+            <div className={style.heart}>
+              <CiHeart  />
             </div>
           </div>
           <div className={style.descr__div} onClick={changeStyle}>

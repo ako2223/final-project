@@ -81,15 +81,15 @@ code {
   margin: 0;
   padding: 0;
   /* background-color: #5d72c6; */
-  background-color: #414f86;
+
 }
 
 main {
   max-width: calc(100% - 190px);
   margin: auto 0 auto auto;
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  justify-content: space-between;
+  grid-template-columns: 3fr 3fr;
+  /* justify-content: space-between; */
 }
 
 main .main-layout-content {

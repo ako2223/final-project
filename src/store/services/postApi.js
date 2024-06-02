@@ -11,7 +11,7 @@ export const postApi = createApi({
     getPosts: build.query({
       query: () => ({
         
-        url: "/posts?page=1&quantity=5",
+        url: "/posts?page=6&quantity=5",
         headers: {
           Authorization: `Bearer ${token}`
       ,
