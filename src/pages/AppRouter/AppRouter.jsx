@@ -12,29 +12,34 @@ import News from "../../components/News/News";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import DetailNew from "../../components/DetailNew/DetailNew";
 import { useState, useEffect } from "react";
-import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 import NewpPostPage from "../NewPostPage/NewPostPage";
-import LoginPage  from '../LoginPage/LoginPage'
+import LoginPage from "../LoginPage/LoginPage";
 import PostLikesSmall from "../../components/PostLikesSmall/PostLikesSmall";
-import Ai from '../../components/Ai/Ai'
+import Ai from "../../components/Ai/Ai";
+import NewPostAi from "../../components/NewPostAi/NewPostAi";
 function AppRouter() {
   const [token, setToken] = useState(null);
   const authUser = [
-    {path: '/',
-    element: <Home/>},
-    {path: '/regisration',
-    element: <RegistPage/>},
-    {path: '/contacts',
-    element: <Contact/>},
+    { path: "/", element: <Home /> },
+    { path: "/regisration", element: <RegistPage /> },
+    { path: "/contacts", element: <Contact /> },
 
-   useEffect(()=>{
-    setToken(localStorage.getItem('accessToken'))
-   },[localStorage.getItem('accessToken')])
-  ]
+    useEffect(() => {
+      setToken(localStorage.getItem("accessToken"));
+    }, [localStorage.getItem("accessToken")]),
+  ];
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about_us" element={<PrivateRoute><About/></PrivateRoute>} />
+      <Route
+        path="/about_us"
+        element={
+          <PrivateRoute>
+            <About />
+          </PrivateRoute>
+        }
+      />
       <Route path="/login" element={<Login />} />
       <Route path="/registration" element={<RegistrationForm />} />
       <Route path="/user" element={<UserPage />} />
@@ -45,6 +50,7 @@ function AppRouter() {
       <Route path="/news/:newsId/:title" element={<DetailNew />} />
       <Route path="/newpost" element={<NewpPostPage />} />
       <Route path="/ai" element={<Ai />} />
+      <Route path="/npa" element={<NewPostAi />} />
     </Routes>
   );
 }

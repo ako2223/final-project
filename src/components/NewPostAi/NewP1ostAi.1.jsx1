@@ -1,0 +1,83 @@
+import React from "react";
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { postApi } from "../../store/services/postApi";
+import imgplace from '../../assets/img/128px-placeholder.png';
+
+export function NewPostAi() {
+
+  const aImg = new XMLHttpRequest();
+  const fileUrl = 'https://ai-studio-assets.limewire.media/u/e6cfc778-42f2-4700-be65-61ca6b170830/image/185a2bbd-adb5-4ee1-88de-91869f0f369c?Expires=1717340462&Signature=URkawfWGUBp91szi1kn4qqWVC5ODYt4kTdCUxe5qLbYbfcOqG3K0LFJd68x3frKxjCew-icfAiQq7zeRfVMgfk-5J0tgq1-EC6HR4Y~XbKqo1im0rygLS1CdyWMCUYyUTrpAYM3z4LME6Pm-X7-YN-Fp3vd5IfphYJFH8MFEXAlQkmwBRL1-gj3858qQ6mwrMLzfNgsFlWKflKZx6ZOKkYwP1FebA5nJaiwHOV9MyI1fT~r30Ncql~aggUcRDw8uWodRyUhj3RSKOMYUy2DgbKG-wbHLZYLotTQ5qEJT5zxyfxwWVeYul-XmyLvQ-qWH5SeqoliX6zrrES22VhHlyA__&Key-Pair-Id=K1U52DHN9E92VT';
+  // aImg.open("GET", fileUrl, true);
+  const [addUser, { }] = postApi.useAddUserMutation();
+  const [addPost, { isLoading, isSuccess, isError, error }] = postApi.useAddPostMutation();
+  const { register, handleSubmit, reset } = useForm();
+  const [image, setImage] = useState(null);
+  const [description, setDescription] = useState('');
+
+  const onImageChange = (event) => {
+    if (event) {
+      console.log(event);
+      if (event.target.files && event.target.files[0]) {
+        setImage(URL.createObjectURL(event.target.files[0]));
+      }
+      if (!event.target.value.includes('fakepath')) { setDescription(event.target.value); }
+    } else {
+      setImage(imgplace);
+
+
+    };
+  };
+
+
+  const onGenerate = (values) => {
+    const prompt = values.prompt;
+
+  };
+
+  const onSubmit = (values) => {
+    addUser(values);
+  };
+
+  const onPost = (values) => {
+    const formData = new FormData();
+    formData.append("file", values.file[0], values.file[0].name);
+    formData.append("description", values.description);
+    addPost(formData);
+  };
+
+  const readyFile = () => {
+    alert('файл выбран');
+  };
+
+  useEffect(onImageChange, []);
+
+
+  return (
+    <div>
+
+      <form onSubmit={handleSubmit(onPost)} onChange={onImageChange}>
+
+        <label>
+          Выберите картинку:{" "}
+          <input name="file" type="file" onChange={onImageChange} className="filetype" {...register("file")} />
+        </label>
+        <br />
+        <label>
+          Текст (опционально):{" "}
+          <input name="description" type="text" {...register("description")} />
+        </label>
+        <br />
+        <input type="submit" value="Создать пост" disabled={isLoading} />
+        {isLoading && <p>Загрузка...</p>}
+        {isSuccess && <p>Пост создан!</p>}
+        {isError && <p>Ошибка загрузки... {error.message}</p>}
+
+      </form>
+
+      <img alt="preview image" src={image} />
+      <p>{description}</p>
+    </div>
+
+  );
+}
